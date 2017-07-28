@@ -8,6 +8,10 @@ import VueResource from 'vue-resource';
 Vue.use(VueResource);
 Vue.config.productionTip = false
 
+
+console.log('ACTUAL PATHNAME: ' + location.pathname);
+console.log('CONFIG PATHNAME: ' + process.env.BASE_URL);
+
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

@@ -8,12 +8,12 @@ export default new Router({
     mode: 'history',
     routes: [
         {
-            path: '/',
+            path: `${process.env.BASE_URL}`,
             name: 'Hello',
             component: Hello
         },
         {
-            path: '/index.html',
+            path: `${process.env.BASE_URL}index.html`,
             name: 'Hello',
             component: Hello
         }
