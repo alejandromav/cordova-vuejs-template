@@ -1,0 +1,28 @@
+<div id="navbar" class="navbar">
+
+	<v-touch class="burger-container" v-bind:class="{ 'menu-opened': showMenu }" v-on:tap="showMenu = !showMenu">
+		<div id="burger">
+			<div class="bar topBar"></div>
+			<div class="bar btmBar"></div>
+		</div>
+	</v-touch>
+
+	<p>{{ title }}</p>
+
+	<div class="side-menu animated" v-bind:class="{ slideOutLeft: showMenu === false, slideInLeft: showMenu }">
+		<!-- Profile -->
+		<div class="profile">
+			
+
+		</div>
+
+		<!-- navigation menu -->
+		<ul>
+			<li v-for="page of pages" :key="page.name">
+				<v-touch v-on:tap="navigate(page.path); showMenu = false">
+					<span :class="page.icon"></span><p>{{ page.name }}</p>
+				</v-touch>
+			</li>
+		</ul>
+	</div>
+</div>

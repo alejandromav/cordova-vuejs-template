@@ -1,21 +1,23 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/hello'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '@/components/home/home';
+import Settings from '@/components/settings/settings';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-    mode: 'history',
-    routes: [
-        {
-            path: `${process.env.BASE_URL}`,
-            name: 'Hello',
-            component: Hello
-        },
-        {
-            path: `${process.env.BASE_URL}index.html`,
-            name: 'Hello',
-            component: Hello
-        }
-    ]
-})
+	mode: 'history',
+	routes: [
+		{
+			path: '/',
+			alias: [ '/index.html' ],
+			name: 'Home',
+			component: Home
+		},
+		{
+			path: '/settings',
+			name: 'Settings',
+			component: Settings
+		}
+	]
+});

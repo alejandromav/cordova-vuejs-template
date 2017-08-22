@@ -4,18 +4,23 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import VueResource from 'vue-resource';
+import VueTouch from 'vue-touch';
+
+// Custom components
+import Navbar from '@/components/navbar';
+Vue.component('navbar', Navbar);
 
 Vue.use(VueResource);
-Vue.config.productionTip = false
+Vue.use(VueTouch);
+Vue.config.productionTip = false;
 
+VueTouch.config.tap = {
+	time: 1000
+};
 
-console.log('ACTUAL PATHNAME: ' + location.pathname);
-console.log('CONFIG PATHNAME: ' + process.env.BASE_URL);
-
-/* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    router,
-    template: '<App/>',
-    components: { App }
-})
+	el: '#app',
+	router,
+	template: '<App/>',
+	components: { App }
+});
